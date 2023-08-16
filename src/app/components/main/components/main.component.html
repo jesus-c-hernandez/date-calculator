@@ -1,0 +1,107 @@
+<div class="main-container">
+  <div class="inner-container">
+    <p class="inner-title">Date calculator</p>
+    <div class="date-input-container">
+      <form [formGroup]="date" (ngSubmit)="onSubmit()">
+        <p>Init date:</p>
+        <div class="form">
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="YYYY"
+              formControlName="yearInit"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="MM"
+              formControlName="monthInit"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="DD"
+              formControlName="dayInit"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="HH"
+              formControlName="hourInit"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="mm"
+              formControlName="minuteInit"
+            />
+          </fieldset>
+        </div>
+        <p>End date:</p>
+        <div class="form">
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="YYYY"
+              formControlName="yearEnd"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="MM"
+              formControlName="monthEnd"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="DD"
+              formControlName="dayEnd"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="HH"
+              formControlName="hourEnd"
+            />
+          </fieldset>
+          <fieldset class="form-group">
+            <input
+              class="input"
+              type="text"
+              placeholder="mm"
+              formControlName="minuteEnd"
+            />
+          </fieldset>
+        </div>
+        <fieldset class="form-group">
+          <button type="submit" class="btn-main">Calculate</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="error-container" *ngIf="isError">
+      <p>Must enter a valid dates</p>
+    </div>
+    <div class="result-container">
+      <p>Result:</p>
+      <div class="result">
+        <p>{{ resultCalc }}</p>
+      </div>
+    </div>
+  </div>
+</div>
